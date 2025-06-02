@@ -1,13 +1,57 @@
 @import "tailwindcss";
 
-@teme {
+@theme {
   /* color styles */
   --color-primary: #766cf1;
   --color-secondary: #382ae1;
-  --color-background: #ffffff;
+  --color-wight: #ffffff;
   --color-text: #717fab;
   --color-title: #1f2e55;
   --color-body: #e0e8ff;
   --color-card-shadow: #0d30bd28;
   --color-card-center: #f7f9ff;
+  --color-link-shadow: #382ae131;
+  /* fonts */
+  --default-font-family: "Red Hat Display", "Arial", sans-serif;
+}
+
+@layer base {
+  /* red-hat-display-regular - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/red-hat-display-v20-latin-regular.woff2") format("woff2");
+  }
+  /* red-hat-display-700 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./fonts/red-hat-display-v20-latin-700.woff2") format("woff2");
+  }
+  /* red-hat-display-900 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 900;
+    src: url("./fonts/red-hat-display-v20-latin-900.woff2") format("woff2");
+  }
+  html {
+    @apply h-full;
+  }
+  body {
+    @apply h-full flex  items-center justify-center bg-body text-text  text-base leading-[2.5]  font-normal;
+  }
+  main {
+    @apply grow;
+  }
+}
+@layer utilities {
+  .container {
+    @apply w-full max-w-[498px] px-6 mx-auto;
+  }
 }
